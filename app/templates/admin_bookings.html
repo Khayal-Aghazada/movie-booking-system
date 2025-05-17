@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block title %}All Bookings{% endblock %}
+{% block content %}
+<h2>All Bookings</h2>
+<a class="btn" href="/admin/bookings/export">Export to Excel</a>
+<table>
+  <tr><th>ID</th><th>User</th><th>Movie</th><th>Showtime</th><th>Seats</th><th>Booked At</th></tr>
+  {% for b in bookings %}
+    <tr>
+      <td>{{ b[0] }}</td>
+      <td>{{ b[1] }}</td>
+      <td>{{ b[2] }}</td>
+      <td>{{ b[3] }}</td>
+      <td>{{ b[4] }}</td>
+      <td>{{ b[5] }}</td>
+    </tr>
+  {% endfor %}
+</table>
+<a class="btn-outline" href="/admin">Back to Admin Panel</a>
+{% endblock %}

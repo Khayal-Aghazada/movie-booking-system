@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block title %}Edit Movie{% endblock %}
+{% block content %}
+<h2>Edit Movie</h2>
+<form method="POST">
+  <label>Title:</label>
+  <input type="text" name="title" value="{{ movie[0] }}" required>
+
+  <label>Genre:</label>
+  <input type="text" name="genre" value="{{ movie[1] }}" required>
+
+  <label>Duration:</label>
+  <input type="number" name="duration" value="{{ movie[2] }}" required>
+
+  <label>Image URL:</label>
+  <input type="text" name="image_url" value="{{ movie[3] }}" required>
+
+  <button type="submit">Save Changes</button>
+</form>
+<a class="btn-outline" href="/admin">Cancel</a>
+{% endblock %}

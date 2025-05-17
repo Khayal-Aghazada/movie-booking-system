@@ -1,0 +1,17 @@
+{% extends "base.html" %} {% block title %}Dashboard{% endblock %} {% block
+content %}
+<h2>Welcome, {{ username }}!</h2>
+<h3>Now Showing</h3>
+<div class="movie-list">
+  {% for movie in movies %}
+  <div class="movie-card">
+    <img src="{{ movie[4] }}" alt="{{ movie[1] }} poster" />
+    <h3>{{ movie[1] }}</h3>
+    <p>{{ movie[2] }} | {{ movie[3] }} min</p>
+    <a class="btn" href="/showtimes/{{ movie[0] }}">View Showtimes</a>
+  </div>
+  {% endfor %}
+</div>
+{% endblock %}
+
+<pre>{{ movies }}</pre>

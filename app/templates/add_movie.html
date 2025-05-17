@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block title %}Add Movie{% endblock %}
+{% block content %}
+<h2>Add New Movie</h2>
+<form method="POST">
+  <label>Title:</label>
+  <input type="text" name="title" required>
+
+  <label>Genre:</label>
+  <input type="text" name="genre" required>
+
+  <label>Duration (minutes):</label>
+  <input type="number" name="duration" required>
+
+  <label>Image URL:</label>
+  <input type="text" name="image_url" required>
+
+  <button type="submit">Add Movie</button>
+</form>
+<a class="btn-outline" href="/admin">Back to Admin Panel</a>
+{% endblock %}

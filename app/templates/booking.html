@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block title %}Select Seats{% endblock %}
+{% block content %}
+  <h2>Select Your Seat(s)</h2>
+  <form method="POST">
+    <div class="seat-grid">
+      {% for seat in seats %}
+        {% if seat[1] == 'Y' %}
+          <div class="seat booked">{{ seat[0] }}</div>
+        {% else %}
+          <label class="seat available">
+            {{ seat[0] }}
+            <input type="checkbox" name="seats" value="{{ seat[0] }}">
+          </label>
+        {% endif %}
+      {% endfor %}
+    </div>
+    <br>
+    <button type="submit">Confirm Booking</button>
+  </form>
+  <a class="btn-outline" href="/dashboard">Back to Dashboard</a>
+{% endblock %}

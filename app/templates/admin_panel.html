@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block title %}Admin Panel{% endblock %}
+{% block content %}
+<h2>Admin Panel</h2>
+<a class="btn" href="/admin/movies/add">➕ Add Movie</a>
+<h3>Manage Movies</h3>
+<ul>
+  {% for movie in movies %}
+    <li>
+      <strong>{{ movie[1] }}</strong>
+      <a class="btn" href="/admin/showtimes/{{ movie[0] }}">+ Showtimes</a>
+      <a class="btn" href="/admin/movies/edit/{{ movie[0] }}">Edit</a>
+      <a class="btn" href="/admin/movies/delete/{{ movie[0] }}" onclick="return confirm('Delete this movie and all showtimes?');">Delete</a>
+      <ul>
+        {% for s in movie[2] %}
+          <li>
+            {{ s[1] }}
+            <a class="btn" href="/admin/seats/generate/{{ s[0] }}">Generate Seats</a>
+          </li>
+        {% endfor %}
+      </ul>
+    </li>
+  {% endfor %}
+</ul>
+
+
+<a class="btn-outline" href="/dashboard">Back to Dashboard</a>
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %}Add Showtime{% endblock %}
+{% block content %}
+<h2>Add Showtime for "{{ movie[0] }}"</h2>
+<form method="POST">
+  <label>Date & Time:</label>
+  <input type="datetime-local" name="datetime" required>
+
+  <button type="submit">Add Showtime</button>
+</form>
+<a class="btn-outline" href="/admin">Back to Admin Panel</a>
+{% endblock %}

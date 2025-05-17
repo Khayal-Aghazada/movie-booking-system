@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}Showtimes{% endblock %}
+{% block content %}
+  <h2>Showtimes for <em>{{ movie[0] }}</em></h2>
+  <ul class="showtime-list">
+    {% for s in showtimes %}
+      <li>
+        🎬 {{ s[1] }}
+        <a class="btn" href="/booking/{{ s[0] }}">Select Seats</a>
+      </li>
+    {% endfor %}
+  </ul>
+  <a class="btn-outline" href="/dashboard">Back to Dashboard</a>
+{% endblock %}
+
+<pre>{{ showtimes }}</pre>
